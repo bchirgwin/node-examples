@@ -3,13 +3,17 @@ var app = express();
 var bodyParser = require('body-parser');
 var router = express.Router();
 var port = process.env.PORT || 8080;
+var users = require('./models/users')
 
 router.get('/users', function (req, res) {
-    res.json( require('./models/users'));
+    res.json( users.getUsers() );
 });
 
-router.get('/about', function (req, res) {
-    res.send({message: 'about!'});
+router.get('/users/:id', function(req, res){
+
+    var id = req.params.id;
+    console.log (id)
+    res.json( users.getUser(id) );
 });
 
 app.use(bodyParser.urlencoded({extended: true}));

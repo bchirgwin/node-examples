@@ -1,4 +1,4 @@
-module.exports = [
+var users = [
     {id: 1, name: 'sleey'},
     {id: 2, name: 'happy'},
     {id: 3, name: 'dopey'},
@@ -6,4 +6,11 @@ module.exports = [
     {id: 5, name: 'doc'},
     {id: 6, name: 'sneezy'},
     {id: 6, name: 'grumpy'}
-]
+];
+
+
+module.exports = {
+    getUsers: function () {
+        return users;
+    }
+}
