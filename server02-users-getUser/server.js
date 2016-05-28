@@ -10,9 +10,7 @@ router.get('/users', function (req, res) {
 });
 
 router.get('/users/:id', function(req, res){
-
     var id = req.params.id;
-    console.log (id)
     res.json( users.getUser(id) );
 });
 
